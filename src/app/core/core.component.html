@@ -1,0 +1,33 @@
+<ts-main-nav></ts-main-nav>
+  <div class="example-wrapper">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 example-col">
+                <p>MaskedTextBox</p>
+                <kendo-maskedtextbox
+                    [(ngModel)]="value"
+                    [mask]="'9-000'"
+                ></kendo-maskedtextbox>
+            </div>
+            <div class="col-xs-12 col-sm-6 example-col">
+                <p>NumericTextBox</p>
+                <kendo-numerictextbox
+                    [(ngModel)] = "numericValue"
+                ></kendo-numerictextbox>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 example-col">
+                <p>Slider</p>
+                <kendo-slider
+                    [min]="min"
+                    [max]="max"
+                    [smallStep]="smallStep"
+                    [(ngModel)] = "sliderValue"
+                ></kendo-slider>
+            </div>
+            <div class="col-xs-12 col-sm-6 example-col">
+                <p>Switch</p>
+                <kendo-switch [(ngModel)]="checked"></kendo-switch>
+            </div>
+        </div>
+    </div>

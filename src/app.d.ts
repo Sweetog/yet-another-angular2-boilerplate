@@ -13,3 +13,4 @@ declare module App {
 
 
 declare var AppConfig: App.Configuration;
+declare var require: any;

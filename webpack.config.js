@@ -27,11 +27,27 @@ module.exports = function (env) {
         },
         module: {
             loaders: [
-                { test: /\.ts$/, loader: 'ts-loader' }
+                { test: /\.html$/, use: 'raw-loader' },
+                { test: /\.css$/, use: 'raw-loader' },
+                { test: /\.ts$/, loaders: [ 'ts-loader' ,'angular2-template-loader'] },
+                { test: /\.scss$/,
+                  exclude: /node_modules/,
+                  use: [{
+                        loader: "style-loader"
+                    }, {
+                        loader: "css-loader"
+                    }, {
+                    loader: "sass-loader",
+                    options: {
+                        includePaths: ["absolute/path/a", "absolute/path/b"]
+                    }
+                 }]
+                }//end scss
+                
             ]
         },
         resolve: {
-            extensions: ['.js', '.ts']
+            extensions: ['.js', '.ts','.scss','.css']
         },
         plugins: [
             new htmlPlugin({
